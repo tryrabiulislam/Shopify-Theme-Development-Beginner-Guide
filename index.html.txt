@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopify Theme Development</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Ubuntu', Arial, sans-serif;
+      line-height: 1.5;
+      padding: 20px;
+      margin-left:20%;
+      margin-right:20%;
+      box-shadow:0px 0px 30px 0px rgba(0,0,0,0.05);
+      padding-left:50px;
+      padding-right:50px;
+      margin-top:50px;
+      margin-bottom:50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      text-align:center
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    
+    .code {
+      font-family: 'Ubuntu Mono', monospace;
+      color: #fff;
+      background-color:#000000;
+      padding: 2px;
+      border-radius: 4px;
+      padding-left:10px;
+      padding-right:20px;
+      padding-top:20px;
+      padding-bottom:10px;
+      width:478px;
+    }
+
+    .code code{
+     font-size:15px;
+    }
+
+
+    body.dark-mode .code{
+        background-color:#000000;
+    }
+    
+    ol {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    p {
+      margin-bottom: 10px;
+    }
+    
+    a {
+      color: #333;
+    }
+
+    .mode-changer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 9999;
+      margin-top:30px;
+    }
+    
+    .mode-changer i {
+      margin-right: 10px;
+    }
+
+    body.dark-mode {
+      background-color: #333;
+      color: #fff;
+      box-shadow:0px 0px 30px 0px #3355ef;
+      border-radius: 10px;
+    }
+
+    body.dark-mode a {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="mode-changer">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <h1>Basic Steps of Shopify Theme Development</h1>
+  
+  <h2>1. Installation</h2>
+  <p>First, install the Shopify CLI or Theme Kit. We recommend using the Shopify CLI. To install, follow these steps:</p>
+  <div class="code">
+    <div class="copy-code">
+      <code>npm install -g @shopify/cli</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+    <div class="copy-code">
+      <code>npm install -g @shopify/theme</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+  </div>
+ 
+  
+  <h2>2. Connect to Live Theme</h2>
+  <p>Connect your local development environment to a live theme in Shopify using Visual Studio Code (VS Code). Here's how:</p>
+  <ol>
+    <li>Create an empty theme in your Shopify store and activate it.</li>
+    <li>Pull the theme from Shopify to your local machine by running the command:</li>
+  </ol>
+  <div class="code">
+    <div class="copy-code">
+      <code>shopify theme pull</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+    </div>
+
+  
+  <h2>3. Run the Development Server</h2>
+  <p>Run the development server in VS Code by executing the command:</p>
+  <div class="code">
+    <div class="copy-code">
+      <code>shopify theme dev</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+    </div>
+  
+  <h2>4. Monitor Code Changes</h2>
+  <p>Monitor your code changes and detect any errors by running:</p>
+  <div class="code">
+    <div class="copy-code">
+      <code>shopify theme serve</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+    </div>
+  
+  <h2>5. Open in VS Code</h2>
+  <p>Open the project folder in VS Code using the shortcut command:</p>
+  <div class="code">
+    <div class="copy-code">
+      <code>code .</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+    </div>
+  
+  <h2>Troubleshooting in the CLI</h2>
+  <p>If you encounter any errors or problems, you can uninstall and reinstall the CLI. Use the following commands:</p>
+  <div class="code">
+    <div class="copy-code">
+      <code>npm uninstall -g @shopify/cli</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+    <div class="copy-code">
+      <code>npm uninstall -g @shopify/theme</code>
+      <span class="copy-icon"><i class="fas fa-copy"></i></span>
+    </div>
+  </div>
+  
+  <h2>Software Requirements</h2>
+  <ol>
+    <li>Node.js</li>
+    <li>Ruby with DevKit</li>
+    <li>Git</li>
+    <li>VS Code or Sublime Text (VS Code is recommended). If you're using VS Code, install the "liquid" extensions from the marketplace. Choose 3-4 extensions from the list.</li>
+  </ol>
+
+  <h5 style="text-align: center;">A special gift for Mahfuzar</h3>
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const copyCodeElements = document.querySelectorAll('.copy-code');
+
+    copyCodeElements.forEach(function(element) {
+      const codeElement = element.querySelector('code');
+      const copyIcon = element.querySelector('.copy-icon');
+
+      copyIcon.addEventListener('click', function() {
+        const codeToCopy = codeElement.innerText;
+        
+        const textarea = document.createElement('textarea');
+        textarea.value = codeToCopy;
+        document.body.appendChild(textarea);
+        
+        textarea.select();
+        document.execCommand('copy');
+        
+        document.body.removeChild(textarea);
+        
+        alert('Lazy mode activated! The code has been copied automatically. Enjoy your break and let the computer do the work for you!');
+      });
+    });
+  });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const modeChanger = document.querySelector('.mode-changer');
+      const body = document.body;
+
+      // Check if the user has a preferred mode stored in localStorage
+      const preferredMode = localStorage.getItem('mode');
+      if (preferredMode === 'dark') {
+        body.classList.add('dark-mode');
+      }
+
+      // Toggle between dark and light modes
+      modeChanger.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('mode', isDarkMode ? 'dark' : 'light');
+      });
+    });
+  </script>
+</body>
+</html>
